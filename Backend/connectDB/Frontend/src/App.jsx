@@ -1,6 +1,6 @@
 import React from 'react';
-import Input from './component/Input';
-import Edit from './component/Edit';
+import Input from './Component/Input';
+import Edit from './Component/Edit';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 export default function App() {

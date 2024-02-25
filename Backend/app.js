@@ -15,6 +15,7 @@ connectDB(URI);
 app.use(cors());
 app.use(express.json())
 
+//route
 app.use('/api',router)
 app.get('/',(req,res)=>{
     res.send('Hi, i am ready....')

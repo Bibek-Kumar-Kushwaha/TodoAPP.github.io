@@ -7,21 +7,6 @@ export default function Edit() {
 
   const { id } = useParams();
   const [input, setInput] = useState({ title: '', note: '' });
-  const [tasks, setTasks] = useState({ title: '', note: '' }); 
-  
-  useEffect(() => {
-    // Fetch previous tasks when component mounts
-    fetchTasks();
-}, []);
-
-const fetchTasks = async () => {
-    try {
-        const response = await axios.get('http://localhost:8000/api/tasks');
-        setTasks(response.data);
-    } catch (error) {
-        console.error('Error fetching tasks:', error.message);
-    }
-};
 
 const handleUpdateTask = async () => {
   try {
@@ -30,6 +15,7 @@ const handleUpdateTask = async () => {
   } catch (error) {
     console.error('Error updating task:', error);
   }
+  alert("Updated your data click on back to Home");
 };
 
   return (
@@ -49,6 +35,7 @@ const handleUpdateTask = async () => {
           value={input.note}
           onChange={(e) => setInput({ ...input, note: e.target.value })}
         ></textarea>
+    
         <button
           type="submit"
           className="w-full py-2 text-white bg-green-500 rounded-md hover:bg-green-600 transition-colors duration-300 font-bold text-xl mb-2"
@@ -56,6 +43,7 @@ const handleUpdateTask = async () => {
         >
           UPDATE
         </button>
+        
         <button
           type="submit"
           className="w-full py-2 text-white bg-green-500 rounded-md hover:bg-green-600 transition-colors duration-300 font-bold text-xl"

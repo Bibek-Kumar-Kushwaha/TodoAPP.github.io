@@ -7,5 +7,5 @@ const todoSchema = new mongoose.Schema({
 });
 
 const todoModel = mongoose.model('Todo', todoSchema);
-
+//Todo means -> collection name 
 export default todoModel;
